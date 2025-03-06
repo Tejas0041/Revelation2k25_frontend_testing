@@ -1,0 +1,434 @@
+.event-details-container {
+  padding-top: 4rem; /* Add space for back button */
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.event-details-left {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-full-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.event-info-section {
+  margin-top: 2rem;
+}
+
+.event-info-section h3 {
+  margin: 1.5rem 0 1rem;
+  color: #1a1a1a;
+}
+
+.event-details-right {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.teams-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.teams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.create-team-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.team-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.team-item:last-child {
+  border-bottom: none;
+}
+
+.registrations-container {
+  margin-top: 1rem;
+}
+
+.teams-section, .participants-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-item {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: white;
+}
+
+.team-item.user-team {
+  border: 3px solid #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15);
+  position: relative;
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  z-index: 1;
+}
+
+.your-team-badge {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.view-members-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.team-members {
+  padding: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.member:last-child {
+  border-bottom: none;
+}
+
+.member img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.member.leader {
+  background: #f8f9fa;
+}
+
+.member.current-user {
+  background: #e8f5e9;
+  border-left: 3px solid #28a745;
+}
+
+.leader-badge {
+  background: #28a745;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.you-badge {
+  background: #28a745;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.participants-section {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.participants-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.participant-item.current-user {
+  border: 2px solid #28a745;
+  box-shadow: 0 2px 12px rgba(40, 167, 69, 0.1);
+  position: relative;
+}
+
+.participant-item.current-user::before {
+  content: 'You';
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  background: #28a745;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.participant-info {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.participant-details {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.participant-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.iiestian-badge, .non-iiestian-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.iiestian-badge {
+  background: #17a2b8;
+  color: white;
+}
+
+.non-iiestian-badge {
+  background: #6c757d;
+  color: white;
+}
+
+.participant-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.participant-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid #eee;
+}
+
+.participant-item div {
+  flex: 1;
+}
+
+.participant-item p {
+  margin: 0;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.participant-item small {
+  display: block;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.registration-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-header h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+h4 {
+  margin: 0 0 1rem 0;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+.registration-status {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+}
+
+.registration-status[status="pending"] {
+  background: #ffc107;
+  color: #000;
+}
+
+.registration-status[status="approved"] {
+  background: #28a745;
+  color: white;
+}
+
+.registration-status[status="rejected"] {
+  background: #dc3545;
+  color: white;
+}
+
+.iiestian-badge {
+  background: #17a2b8;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.team-header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.participants-grid .participant-item {
+  position: relative;
+}
+
+.participants-grid .registration-status {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.registration-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-btn {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.register-btn.already-registered {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.register-btn.already-registered:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.badge-container {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.leader-badge {
+  display: inline-flex;
+  margin-top: 0.25rem;
+  width: fit-content;
+}
+
+.you-badge {
+  display: inline-flex;
+  margin-top: 0.25rem;
+  width: fit-content;
+}
+
+.event-card, .registered-event-card {
+  cursor: pointer;
+}

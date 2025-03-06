@@ -1,0 +1,36 @@
+.payment-section {
+  border-top: 1px solid #dee2e6;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.payment-section h4 {
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.amount {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem;
+  background: white;
+}
+
+.payment-note {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
