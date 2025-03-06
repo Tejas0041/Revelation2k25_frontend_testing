@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./css/Layout.css";
 import "./css/Profile.css";
+import { API_URL } from './config/config';
 
 const Profile = ({ setToken }) => {
   const [userData, setUserData] = useState(null);
@@ -23,7 +24,7 @@ const Profile = ({ setToken }) => {
     const token = localStorage.getItem("token");
     if (token) {
       try {
-        const userResponse = await axios.get("http://localhost:5000/api/auth/status", {
+        const userResponse = await axios.get(`${API_URL}/api/auth/status`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -47,7 +48,7 @@ const Profile = ({ setToken }) => {
     
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/users/update-profile",
+        `${API_URL}/api/users/update-profile`,
         editForm,
         {
           headers: { Authorization: `Bearer ${token}` }

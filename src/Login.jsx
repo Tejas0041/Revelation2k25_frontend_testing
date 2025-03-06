@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from './config/config';
 import "./css/Login.css";
 import "./css/Index.css";
 
@@ -10,7 +11,7 @@ const Login = ({ setToken }) => {
 
   const handleGoogleLoginSuccess = async (response) => {    
     try {
-      const backendResponse = await axios.post("http://localhost:5000/api/auth/google", {
+      const backendResponse = await axios.post(`${API_URL}/api/auth/google`, {
         token: response.credential, 
       });
 

@@ -6,6 +6,7 @@ import "./css/Home.css";
 import "./css/Index.css";
 import "./css/Layout.css";
 import "./css/EventCard.css";
+import { API_URL } from './config/config';
 
 const Home = ({ setToken }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -20,7 +21,7 @@ const Home = ({ setToken }) => {
     }
 
     // Check authentication
-    axios.get("http://localhost:5000/api/auth/status", {
+    axios.get(`${API_URL}/api/auth/status`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -37,7 +38,7 @@ const Home = ({ setToken }) => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/events/get-all");
+      const response = await axios.get(`${API_URL}/api/events/get-all`);
       setEvents(response.data.body);
     } catch (error) {
       console.error("Error fetching events:", error);

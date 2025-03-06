@@ -5,6 +5,7 @@ import RegistrationForm from '../components/RegistrationForm';
 import BackButton from '../components/BackButton';
 import Loader from '../components/Loader';
 import '../css/EventDetails.css';
+import { API_URL } from '../config/config';
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -22,12 +23,12 @@ const EventDetails = () => {
       try {
         const token = localStorage.getItem('token');
         const [eventRes, participantsRes, userStatusRes, userRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/events/${id}`),
-          axios.get(`http://localhost:5000/api/events/${id}/participants`),
-          axios.get(`http://localhost:5000/api/events/${id}/registration-status`, {
+          axios.get(`${API_URL}/api/events/${id}`),
+          axios.get(`${API_URL}/api/events/${id}/participants`),
+          axios.get(`${API_URL}/api/events/${id}/registration-status`, {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/auth/status', {
+          axios.get(`${API_URL}/api/auth/status`, {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
@@ -48,7 +49,7 @@ const EventDetails = () => {
 
   const handleRegistrationComplete = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/events/${id}/participants`);
+      const response = await axios.get(`${API_URL}/api/events/${id}/participants`);
       setParticipants(response.data.body);
       setShowRegistration(false);
       // Add window reload after successful registration
