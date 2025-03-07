@@ -23,7 +23,7 @@ const SingleRegistrationForm = ({ eventId, onClose, onRegistrationComplete, regi
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get('http://localhost:5000/api/auth/status', {
+    axios.get(`${baseUrl}/api/auth/status`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(response => {
       const userData = response.data.user;
@@ -68,7 +68,7 @@ const SingleRegistrationForm = ({ eventId, onClose, onRegistrationComplete, regi
       }
 
       const response = await axios.post(
-        `http://localhost:5000/api/events/${eventId}/register`,
+        `${baseUrl}/api/events/${eventId}/register`,
         formData,
         {
           headers: { 

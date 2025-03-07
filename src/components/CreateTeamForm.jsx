@@ -17,14 +17,15 @@ const CreateTeamForm = ({ eventId, onClose, onTeamCreated, maxTeamSize, minTeamS
   const [paymentImage, setPaymentImage] = useState(null);
   const [teamSectionCompleted, setTeamSectionCompleted] = useState(false);
   const [paymentCompleted, setPaymentCompleted] = useState(false);
+  const baseUrl= import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     Promise.all([
-      axios.get('http://localhost:5000/api/auth/status', {
+      axios.get(`${baseUrl}/api/auth/status`, {
         headers: { Authorization: `Bearer ${token}` }
       }),
-      axios.get('http://localhost:5000/api/users/get-all', {
+      axios.get(`${baseUrl}/api/users/get-all`, {
         headers: { Authorization: `Bearer ${token}` }
       })
     ]).then(([leaderRes, usersRes]) => {
@@ -97,7 +98,7 @@ const CreateTeamForm = ({ eventId, onClose, onTeamCreated, maxTeamSize, minTeamS
       }
 
       const response = await axios.post(
-        `http://localhost:5000/api/events/${eventId}/register`,
+        `${baseUrl}/api/events/${eventId}/register`,
         formData,
         {
           headers: { 
