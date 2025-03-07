@@ -11,6 +11,7 @@ const SingleRegistrationForm = ({ eventId, onClose, onRegistrationComplete, regi
   const [isIIESTian, setIsIIESTian] = useState(false);
   const [personalDetailsCompleted, setPersonalDetailsCompleted] = useState(false);
   const [paymentCompleted, setPaymentCompleted] = useState(false);
+  const baseUrl= import.meta.env.VITE_API_URL;
 
   const validatePersonalDetails = () => {
     return user && phoneNumber.length === 10;
